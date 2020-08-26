@@ -30,7 +30,7 @@
 <script>
 	// ol = OpenLayers 약어 
      var map = new ol.Map({
-        target: 'map',  // 위 index.jsp에 div id가 map인 엘리먼트에 맵을 표출
+        target: 'map',  // 위 index.jsp에 div id가 map인 요소에 맵을 표출
         layers: [
           new ol.layer.Tile({
             source: new ol.source.OSM()
@@ -103,6 +103,9 @@
 	
 	
 	
+	
+	
+	//기본예제
 	var layerName = "poi";
 	var wms = new ol.source.TileWMS({
 		urls:["http://localhost:8080/geoserver/wms"],
@@ -110,7 +113,7 @@
 				/* 'FORMAT' : 'gif', */ //FORMAT MISMATCH로 default로 처리
 				'TRANSPARENT':'TRUE'
 		},
-		serverType:'gerserver',
+		serverType:'geoserver',
 		/* crossOrigin:'anonymous', */
 	
 	});
@@ -124,15 +127,33 @@
 		opacity:1.0
 	});
 	
+	
+	var layerName2 = "tl_scco_ctprvn";
+	var wms2 = new ol.source.TileWMS({
+		urls:["http://localhost:8080/geoserver/wms"],
+		params:{'LAYERS':layerName2,
+				'TRANSPARENT':'TRUE'	
+		},
+		serverType:'geoserver',
+	});
+	
+	var layer2= new ol.layer.Tile({
+		source :wms2,
+		layerCategory :'WMS',
+		type:'WMS',
+		visiable:true,
+		opacity:1.0
+	});
+	
 
 
-
+	map.addLayer(layer2);
 	map.addLayer(layer);
 </script>
 
 
 
-<!--출처: https://progworks.tistory.com/18 -->
+
 </body>
 </html>
 
