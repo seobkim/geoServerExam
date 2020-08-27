@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-
 <html lang="">
 <head>
     <meta charset="utf-8">
@@ -19,7 +18,6 @@
         }
     </style>
 </head>
-
 
 <body>
     <div id="map" class="map"></div>
