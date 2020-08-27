@@ -20,6 +20,7 @@
     </style>
 </head>
 
+
 <body>
     <div id="map" class="map"></div>
     <script type="text/javascript">
