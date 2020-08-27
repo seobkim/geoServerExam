@@ -4,7 +4,6 @@
 <html>
 <head>
 
-<%response.setHeader("Access-Control-Allow-Origin","*"); %>
 <!-- OpenLayers CDN -->
 <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.1.1/build/ol.js"></script>
 
@@ -12,7 +11,7 @@
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
     <style>
       #map {
-        height: 400px;
+        height: 650px;
         width: 100%;
       }
     </style>
@@ -149,6 +148,8 @@
 
 	map.addLayer(layer2);
 	map.addLayer(layer);
+	
+	console.log(map);
 </script>
 
 
